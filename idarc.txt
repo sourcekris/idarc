@@ -1,0 +1,278 @@
+öber IDArc
+----------
+
+IDArc ist ein einfaches Tool zum Identifizieren von komprimierten Dateien 189
+verschiedener Formate. Da es keine grî·ere programmiertechnische Leistung dar-
+stellt und ich auch keinerlei Weiterentwicklung oder sonstige Eigenschaften
+garantiere, au·er da· es Platz auf der Festplatte belegt, gebe ich es hiermit
+als
+			    FREEWARE
+
+frei. Das Copyright verbleibt jedoch bei mir und das Programm darf weder
+verÑndert noch disassembliert o.Ñ. werden. Eine Weitergabe ist jederzeit
+erlaubt, wenn sie _entgeltlos_ erfolgt (von KopiergebÅhren der Shareware-
+HÑndler mal abgesehen). Der Autor Åbernimmt KEINERLEI Haftung!
+
+Das Programm verwendet die beiliegende Pascal-Unit IDPACKER.PAS. Wen es inter-
+essiert, der kann darin einige Infos zum Identifizieren von Archiven finden.
+
+
+Meine Adresse:		JÅrgen Peters
+			Sundernstr. 30
+			D-33829 Borgholzhausen
+
+			FidoNet    :  2:2432/344-349
+                        eMail      :  uu@graybeast.de
+			WWW	   :  http://www.graybeast.de
+				      (Hier auch spezielle Version mit
+				       Koprozessor-Emulator fÅr 286-, 386-
+				       und 486SX-Rechner verfÅgbar; siehe
+				       COPROC.EXE)
+			FTP	   :  ftp://graybeast.dyndns.org
+				      ftp://graybeast.2y.net
+				      ftp://graybeast.dyn.ee
+				      ftp://graybeast.dyns.cx
+				      (wenn eine URL nicht funktioniert,
+				       andere probieren, siehe auch
+				       GRAY_FTP.TXT)
+
+Kurz zur Bedienung:
+-------------------
+
+Das Programm IDARC.EXE erwartet als Parameter den Namen (auch mit Pfadangabe,
+lange Dateinamen unter Windows werden unterstÅtzt) der zu untersuchenden Datei.
+Ist die Datei eine Archivdatei eines IDArc bekannten Formates, wird ein
+entsprechender ERRORLEVEL zurÅckgegeben, z.B.:
+
+IDARC C:\PROGS\ARJ250A.EXE>NUL
+IF ERRORLEVEL 8 ECHO Datei ist mit ARJ gepackt!
+
+Erkannt werden zur Zeit folgende Archiv-Formate (auch EXE-Dateien u.a.):
+
+  1. ARC		   2. ZIP		    3. ZOO
+  4. LZH		   5. DWC		    6. MDCD
+  7. LBR		   8. ARJ		    9. HYP
+ 10. UC2		  11. HAP		   12. HA
+ 13. HPack		  14. SQZ (Squeeze It)	   15. RAR
+ 16. PAK		  17. ARC+		   18. LIM
+ 19. BSN/BSA (PTS-DOS)	  20. PUT		   21. SQWEZ
+ 22. Crush/ZIP		  23. Crush/ARJ 	   24. Crush/LZH
+ 25. Crush/ZOO		  26. Crush/HA		   27. LZExe
+ 28. PKLite		  29. Diet		   30. TinyProg
+ 31. GIF		  32. JPG (JFIF)	   33. JPG (HSI)
+ 34. AIN		  35. AINEXE		   36. SAR
+ 37. BS2/BSArc		  38. GZIP/Comp 4.3	   39. ACB
+ 40. MAR		  41. CPShrink		   42. JRC
+ 43. JArcs		  44. Quantum		   45. ReSOF
+ 46. Crush/ungepackt	  47. ARX		   48. UCEXE
+ 49. WWPack		  50. QuArk		   51. YAC
+ 52. X1 		  53. Codec		   54. AMGC
+ 55. NuLIB		  56. PAKLeo		   57. TGZ
+ 58. WWPack-Datendatei	  59. ChArc		   60. PSA
+ 61. ZAR		  62. LHARK		   63. CrossePAC
+ 64. Freeze		  65. KBoom		   66. NSQ
+ 67. DPA		  68. TTComp		   69. WIC (Fake-Packer!)
+ 70. RKive		  71. JAR		   72. ESP
+ 73. ZPack		  74. DRY		   75. OWS (Fake-Packer!)
+ 76. SKY		  77. ARI		   78. UFA
+ 79. Microsoft CAB	  80. FOXSQZ		   81. AR7
+ 82. TSComp		  83. PPMZ		   84. MS Compress
+ 85. MP3 (Marco Czudej)   86. ZET		   87. XPack-Data
+ 88. XPack-Diskimage	  89. ARQ		   90. ACE
+ 91. Squash		  92. Terse		   93. XPack Single Data
+ 94. Stuffit (Mac)	  95. PUCrunch		   96. BZip
+ 97. UHarc		  98. ABComp		   99. CMP (AndrÇ Olejko)
+100. BZip2		 101. LZOP		  102. szip (Michael Schindler)
+103. Splint		 104. TAR		  105. InstallShield
+106. CARComp		 107. LZS		  108. BOA
+109. InstallShield Z	 110. ARG		  111. Gather
+112. Pack Magic 	 113. BTS		  114. ELI
+115. QFC		 116. PRO-PACK		  117. MSXiE
+118. RAX		 119. 777		  120. LZS221
+121. HPA		 122. Arhangel		  123. EXP1
+124. IMP		 125. BMF		  126. NRV
+127. oPAQue		 128. Squish (Mike Albert)129. Par
+130. HIT (Bogdan Ureche) 131. SBX		  132. NSK
+133. Disintegrator	 134. ASD (T. Svensson)   135. InstallShield CAB
+136. TOP4		 137. BatComp (4DOS)	  138. BlakHole
+139. BIX (Igor Pavlov)	 140. ChiefLZA		  141. Blink (D.T.S.)
+142. CAR (MylesHi!)	 143. SARJ		  144. Compack Sfx
+145. LogiTech Compress	 146. ARS-Sfx		  147. Akt
+148. Flash		 149. PC/3270		  150. NPack
+151. PFT		 152. XTreme		  153. SemOne
+154. Akt32		 155. InstallIt 	  156. PPMD
+157. Swag		 158. FIZ		  159. BA (M. Lundqvist)
+160. XPA32 (J.Tseng)	 161. RK (M.Taylor)	  162. RPM (RedHat Package)
+163. DeepFreezer	 164. ZZip (Damien Debin) 165. DC (Edgar Binder)
+166. TPac (Tim Gordon)	 167. Ai (E.Ilya)	  168. Ybs (Vadim Yoockin)
+169. Ai32 (E.Ilya)	 170. SBC (Sami MÑkinen)  171. DitPack
+172. DMS		 173. EPC		  174. VSARC
+175. PDZ		 176. Package for the Web 177. NullSoft Installer
+178. Wise Installer	 179. DZip (N.Pflug)	  180. 7z (7Zip 2.3b2)
+181. ReDuq		 182. aPackage		  183. WinImage
+184. GCA		 185. PPMN (Max Smirnov)  186. SAPCAR
+187. Compressia          188. UHBC (Uwe Herklotz) 189. PKZip6/BZip2
+
+Ist das Dateiformat unbekannt/kein Archiv, wird der Errorlevel 251 ausgegeben,
+falls die Datei nicht gefunden wird, 255.
+
+Versionsgeschichte von IDArc
+----------------------------
+1.50.01 16.02.99  - Ab sofort wird hier die Versionsgeschichte protokolliert :).
+		  - UnterstÅtzung von langen Dateinamen unter Windows 9x.
+1.50.02 23.02.99  - Das englische Release-Archiv enthielt versehentlich das
+		    deutsche DOC.
+		  - Kleinere Bugfixes.
+1.50.03 24.02.99  - Blink von D.T.S. wird erkannt.
+	25.02.99  - Eigene WWW-Homepage fÅr IDArc und UU verfÅgbar (URL siehe
+		    Anfang dieses Textes).
+1.50.04 01.03.99  - CAR von MylesHi! Software wird erkannt.
+1.50.05 07.03.99  - SARJ wird anhand Extension .SRJ + ARJ-Format identifiziert.
+1.50.06 11.03.99  - Compack Sfxes werden erkannt.
+1.50.07 16.03.99  - Format LogiTech Compress wird erkannt.
+1.51.00 18.03.99  - Die Ausgabe von IDARC.EXE ohne Parameter (Angabe aller
+		    unterstÅtzen Formate) kann jetzt wieder mittels Piping in
+		    nach Stdout (Datei) umgeleitet werden.
+		    Die zum Compilieren benîtigte Pascal-Unit UMLEIT.PAS ist
+		    mit im Archiv.
+1.51.01 20.03.99  - LHarc 1.13c-Sfxes werden erkannt.
+1.51.02 24.03.99  - Alle Funktionen in IDPACKER.PAS LFN-fÑhig gemacht.
+		  - Kleinen Fehler in UMLEIT.PAS korrigiert.
+1.51.03 31.03.99  - Sfx-Packer ARS wird erkannt.
+1.51.04 02.04.99  - Packer Akt wird identifiziert.
+1.51.05 05.04.99  - Formate Flash (FLH) und PC/3270 werden identifiziert.
+1.51.06 07.04.99  - Umbenennung von PAK (Dmitry Dvoinikov) in oPAQue berÅck-
+		    sichtigt.
+1.51.07 11.04.99  - Formate NPack und PFT (Perfect Finishing Touch) werden
+		    erkannt.
+1.51.08 06.05.99  - Neues 4DOS 6.02-BATCOMP-Format wird erkannt.
+1.52.00 11.05.99  - Packer XTreme wird erkannt (scheint eine RAX-Variante
+		    zu sein).
+		  - Format SemOne wird identifiziert.
+1.52.01 12.05.99  - Support fÅr Akt32.
+1.52.02 18.05.99  - InstallIt wird erkannt.
+1.52.03 23.05.99  - Erkennung von MS Compress verbessert.
+1.52.04 27.05.99  - SemOne 0.5-Erkennung.
+	09.06.99  - énderung der WWW-URL und eMail-Adresse.
+1.52.05 18.06.99  - Erkennung von PPMD.
+		  - Erneute énderung der eMail-Adresse.
+1.53.00 02.07.99  - Neues ZIP-Format mit 'PK00PK' im Dateiheader wird erkannt.
+1.53.01 13.07.99  - Format SWG (Sourceware Archival Group) wird identifiziert.
+1.53.02 02.08.99  - Deutscher Winzip 32 Bit-Selfextractor wird erkannt
+		    (z.B. TGeb).
+1.54.00 08.08.99  - ARJ-Win32-Sfxes werden identifiziert.
+		  - ARJ-Erkennung verbessert.
+		  - FIZ-Format wird erkannt.
+1.55.00 13.08.99  - Wesentlich mehr RAR-32 Bit-Sfx-Formate werden identifiziert.
+1.55.01 14.08.99  - RAR-32 Bit-Sfx 2.60b2 und RAR Linux 2.60b2 werden erkannt.
+1.56.00 18.09.99  - BA (M. Lundqvist) wird erkannt und entpackt.
+		  - RAR-32 Bit-Sfx 2.60b4 wird identifiziert.
+		  - Unbekannte EXEs ohne angehÑngtes Archiv (Non-Sfxes) werden
+		    nicht mehr falsch identifiziert.
+		  - Kleinere Bugfixes bei der LFN-Verarbeitung.
+1.56.01 21.09.99  - Bessere ARJ-DOS-Sfx-Erkennung (inklusive Version 2.63).
+1.56.02 22.09.99  - RAR-32 Bit-Sfx 2.60b5 wird erkannt.
+1.56.03 29.09.99  - Format XPA32 (Jauming Tseng) wird erkannt.
+1.56.04 02.10.99  - BA-Erkennung verbessert (einige Win-Sfxes wurden
+		    fÑlschlicherweise als BA erkannt).
+1.57.00 14.11.99  - Format RK (Nachfolger von RKive) wird identifiziert.
+1.57.01 09.01.00  - ARJ/2 2.70-Sfxes werden erkannt.
+1.58.00 21.02.00  - RedHat Linux RPM-Dateien werden erkannt.
+1.58.01 12.03.00  - PAK-Format wird sicherer von ARC/ARC+ unterschieden.
+		  - Format DeepFreezer wird erkannt.
+1.58.02 16.03.00  - ZZip (Damien Debin) wird identifiziert.
+1.58.03 01.04.00  - ABComp 2.06 wird erkannt.
+1.58.04 15.04.00  - DC (Edgar Binder) wird erkannt.
+1.60.00 24.05.00  - ACE 2.0·1-Sfxes werden identifiziert.
+1.60.01 29.05.00  - TPac (Tim Gordon) wird erkannt.
+1.60.02 07.06.00  - ACE 2.0·2-Sfxe werden identifiziert.
+1.61.00 16.07.00  - Informationen zum FTP-Zugang der Gray Beast-BBS zugefÅgt.
+		  - Neue eMail- und WWW-Adresse.
+1.61.01 24.07.00  - Bessere Erkennung neuerer ACE-, RAR- und ARJ-Sfxe
+		    (alle Plattformen).
+1.62.00 09.08.00  - Packer Ai (E.Ilya) wird identifiziert.
+1.62.01 26.08.00  - Ybs (Vadim Yoockin) wird erkannt.
+		  - (Win)ACE 2.0b2-Sfxe werden identifiziert.
+1.62.02 20.09.00  - Ai32 (E.Ilya) wird erkannt.
+1.62.03 08.10.00  - (Win)ACE 2.0b3-Sfxe werden identifiziert.
+1.63.00 18.10.00  - ACE 2.0b3-Sfx-Erkennung verbessert.
+		  - Packer SBC (Sami MÑkinen) wird erkannt.
+1.63.01 29.10.00  - DitPack 1.0 wird identifiziert.
+1.64.00 08.12.00  - ACE-Sfxe 2.0b3 und 2.0b4 werden identifiziert (alle
+		    Plattformen).
+		  - Codeoptimierung der ACE-Sfx-Erkennungs-Funktion (Dank an
+		    Snow Panther).
+1.64.01 12.12.00  - Codeoptimierung der ZIP- und RAR-Sfx-Erkennungs-Funktionen
+		    (durch Snow Panther).
+		  - Viele neue ZIP-Sfxe (vor allem von Unix-Plattformen) und
+		    einige ACE-Sfxe zugefÅgt.
+1.64.02 31.12.00  - (Win-)ACE 2.0b5-Sfxe werden erkannt.
+1.65.00 11.01.01  - WinRAR und Rar/Linux 2.80b3 werden identifiziert.
+		  - ZZip 0.36b (inkl. Sfxe) wird erkannt.
+1.65.01 29.01.01  - PAR 2.00 Beta wird identifiziert.
+1.65.02 01.02.01  - (Win)ACE 2.0 Release-Sfxes werden erkannt.
+1.65.03 13.02.01  - DMS (Amiga) wird identifiziert.
+1.65.04 17.02.01  - Weitere WinRAR- und WinACE-Sfxes werden identifiziert.
+1.65.05 21.02.01  - Packer EPC wird erkannt.
+1.65.06 10.03.01  - vectorsoft VSARC wird erkannt.
+1.65.07 29.03.01  - Weitere WinRAR-Sfxes werden identifiziert.
+1.66.00 12.04.01  - Format RDMC wird erkannt.
+		  - Weitere ZIP-Sfxes werden identifiziert.
+1.66.01 04.05.01  - RDMC-Erkennung war unzuverlÑssig - entfernt.
+1.66.02 19.05.01  - Format PDZ wird erkannt.
+1.66.03 04.06.01  - Bugfix in Installshield-EXE-Erkennung
+		    (Dank an Snow Panther).
+1.66.04 25.06.01  - "Package for the Web"-Format wird erkannt
+		    (Dank an Snow Panther).
+1.66.05 07.07.01  - "NullSoft Installer"-Format wird erkannt
+		    (Dank an Snow Panther).
+1.66.06 13.07.01  - InfoZIP-Sfx-Erkennung verbessert.
+1.66.07 23.07.01  - Neues ZIP-Sfx-Format (ZipGenie) wird (als ZIP) erkannt.
+2.00.00 09.08.01  - Umfangreiche Bugfixes und énderungen, sowie Portierung auf
+		    FPC 1.0.4/32 Bit durch Ralph Roth, ROSE SWE.
+		  - Weitere énderungen durch Snow Panther.
+2.10.00 14.08.01  - IDPACKER.PAS FPC-Win32-kompatibel.
+		  - IDARCW32.EXE beiliegend (noch experimentell, keine Garantie,
+		    da· sie auch in Zukunft mitgeliefert wird!).
+		  - DZip 2.6 (Nolan Pflug et al.) wird identifiziert.
+2.10.01 28.08.01  - Sfx-Maker 2.x-Sfxe werden erkannt (als ZIPs).
+		  - WinACE 2.04- WinRAR 2.90b3-Erkennung.
+		  - Win32-Version von IDArc vorerst wieder aus dem Archiv
+		    genommen. Leider bekomme ich den Source auf meinem System
+		    nicht kompiliert.
+2.10.02 31.08.01  - Format 7z (7Zip 2.3b2) wird erkannt.
+		  - Einige Code-Optimierungen.
+2.10.03 27.09.01  - ReDuq (Jacco Mintjes) wird identifiziert.
+2.10.04 14.10.01  - Kleinere interne VerÑnderungen.
+2.10.05 30.10.01  - aPackage wird erkannt.
+2.10.06 14.11.01  - Leider wurden immer noch viele Files fÑlschlicherweise als
+		    szip erkannt. Identifizierung Ñlterer szip-Versionen (vor
+		    1.10) deshalb entfernt.
+2.11.00 16.01.02  - WinImage-Format .IMA hinzugefÅgt.
+2.11.01 02.03.02  - Verbesserte RAR 3.x-Sfx-Erkennung.
+2.12.00 08.03.02  - Schwerer Fehler der 2.11.01 beseitigt: Files mit langen
+		    Dateinamen wurden nicht mehr gefunden.
+2.12.01 14.03.02  - (Win-)RAR 3.0b4-Sfxe werden erkannt.
+2.12.02 27.03.02  - (Win-)RAR 3.0b5-Sfxe werden erkannt.
+		  - BA-Erkennung (Typ 159) prÑzisiert.
+2.12.03 19.04.02  - (Win-)ACE-Sfx-Erkennung verbessert.
+2.12.04 26.05.02  - (Win-)RAR 3.00 Final-Sfxe werden erkannt.
+		  - Einige Code-Optimierungen.
+2.13.00 01.06.02  - Erkennung der Formate GCA (S. Tsuruta) und PPMN
+		    (Max Smirnov).
+		  - WinRAR 3.00-Sfx-Erkennung verbessert.
+2.13.01 08.06.02  - SAPCAR wird identifiziert.
+2.13.02 29.06.02  - WinACE 2.2-Sfxe werden erkannt.
+2.14.00 17.10.02  - (Win)RAR 3.1b1-Sfxe werden erkannt.
+                  - WinACE 2.3b1-Sfxe werden erkannt.
+2.14.01 26.10.02  - WinRAR 3.1b2-Sfxe werden erkannt.
+2.14.02 14.11.02  - WinRAR 3.1b3-Sfxe werden erkannt.
+                  - WinACE 2.3b3-Sfxe werden erkannt.
+2.14.03 18.01.03  - WinRAR 3.11-Sfxe werden erkannt.
+2.14.04 25.01.03  - WinACE 2.5 Beta-Sfxe werden identifiziert.
+2.14.05 15.02.03  - Format Compressia (Yaakov Gringeler) wird erkannt.
+2.14.06 12.03.03  - WinRAR 3.20 Beta 1-Sfxe werden erkannt.
+2.14.07 12.06.03  - WinACE 2.5 RC2 und WinRAR 3.20 Final Sfxe werden
+                    identifiziert.
+2.15.00 12.08.03  - UHBC 1.0-Format von Uwe Herklotz wird identifiziert.
+2.15.01 10.10.03  - Archive im PKZip6/BZip2-Format werden erkannt.
