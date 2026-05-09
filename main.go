@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"encoding/binary"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -204,6 +203,7 @@ const (
 	Invalid      = 251
 	FileNotFound = 255
 
+Unknown   = 0
 	nIDPacker = 189 + 2
 )
 
@@ -211,7 +211,6 @@ const (
 var (
 	multiVolume = false
 	avProtected = false
-	idStr       = ""
 )
 
 // PackerNames maps archive type codes to names
@@ -497,11 +496,6 @@ func identifyArchive(filename string) int {
 			}
 		}
 
-		// BZIP
-		if buf[0] == 0x42 && buf[1] == 0x5a && len(buf) >= 3 && buf[2] == 0x68 {
-			return BZip2Type
-		}
-
 		// TAR (check for tar magic)
 		if len(buf) >= 512 {
 			if len(buf) >= 265 && bytes.Equal(buf[257:262], []byte("ustar")) {
@@ -515,11 +509,6 @@ func identifyArchive(filename string) int {
 			   (buf[2] == 0x68 || buf[2] == 0x7a) {
 				return LZHType
 			}
-		}
-
-		// ARZ (compressed ARC)
-		if buf[0] == 0x1a {
-			return AINType
 		}
 
 		// ZOO
@@ -591,14 +580,10 @@ func identifyArchive(filename string) int {
 		return AceType
 	case ".rpm":
 		return RpmType
-	case ".exe":
-		return Unknown
 	default:
 		return Invalid
 	}
 }
-
-const Unknown = 0
 
 func main() {
 	if len(os.Args) < 2 {
