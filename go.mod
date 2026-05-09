@@ -1,3 +1,3 @@
 module github.com/sourcekris/idarc
 
-go 1.21
+go 1.21.1

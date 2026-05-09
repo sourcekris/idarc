@@ -9,7 +9,7 @@ This is a modern Go implementation of the classic IDArc archive identification t
 ## Building
 
 ```bash
-go build -o idarc
+go build .
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ Run `idarc --help` or `idarc` with no arguments to see the complete list.
 
 ## Original Source
 
-Based on IDArc v3.15.01 by Jürgen Peters. Original source files from the `main` branch.
+Based on IDArc v3.15.01 by Jürgen Peters. Original source files are in the `original-pascal-version` branch.
 
 ## Notes
 
