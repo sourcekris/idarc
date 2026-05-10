@@ -192,6 +192,9 @@ const (
 	Compressia ArchiveType = 187
 	UHBC ArchiveType = 188
 	PKZip6BZip2 ArchiveType = 189
+	MeltingPotArchiver ArchiveType = 190
+	MARUtilityFile ArchiveType = 191
+	MARUtilityFolder ArchiveType = 192
 
 	Invalid      ArchiveType = 251
 	FileNotFound ArchiveType = 255
@@ -387,6 +390,9 @@ var PackerNames = map[ArchiveType]string{
 	187: "Compressia",
 	188: "UHBC",
 	189: "PKZip6/BZip2",
+	190: "MeltingPot Archiver",
+	191: "MAR Archive / MAR Utility (file)",
+	192: "MAR Archive / MAR Utility (folder)",
 	251: "unknown",
 	255: "File not found",
 }

@@ -87,6 +87,19 @@ func (d *Detector) DetectComplex() DetectionResult {
 		return DetectionResult{Type: _7z}
 	}
 
+	// MAR Utility
+	if bytes.HasPrefix(d.IDStr, []byte("MAR\x80file")) {
+		return DetectionResult{Type: MARUtilityFile}
+	}
+	if bytes.HasPrefix(d.IDStr, []byte("MAR\x80fold")) {
+		return DetectionResult{Type: MARUtilityFolder}
+	}
+
+	// MeltingPotArchiver
+	if bytes.HasPrefix(d.IDStr, []byte("MAr0")) {
+		return DetectionResult{Type: MeltingPotArchiver}
+	}
+
 	// 777
 	if bytes.HasPrefix(d.IDStr, []byte("777")) {
 		return DetectionResult{Type: _777}
