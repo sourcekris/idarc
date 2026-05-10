@@ -60,7 +60,7 @@ Run `idarc --help` or `idarc` with no arguments to see the complete list.
 
 ## Original Source
 
-Based on IDArc v3.15.01 by Jürgen Peters. Original source files are in the `original-pascal-version` branch.
+Based on IDArc v2.15.01 by Jürgen Peters. Original source files are in the `original-pascal-version` branch.
 
 ## Notes
 
